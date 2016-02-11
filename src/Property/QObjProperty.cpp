@@ -33,3 +33,8 @@ QString QObjProperty::displayName() const
     return _displayName;
 }
 
+QString QObjProperty::displayValue() const
+{
+    return "[QObjProperty]: " + _displayName;
+}
+

@@ -3,6 +3,7 @@
 
 #include <QObject>
 
+class QObjProperty;
 class Controller : public QObject
 {
     Q_OBJECT
@@ -14,12 +15,17 @@ private slots:
     virtual void onPropertyChanged() {};
 
 public:
+    void registerController(Controller * controller);
+
     template <typename T, typename ... Args>
-        T * registerProperty(const QString & name, const QString & displayName, Args... args)
+        T * createProperty(const QString & name, const QString & displayName, Args... args)
     {
         T * property = new T(name, displayName, args...);
+        property->setParent(this);
         connect(property, &QObjProperty::changed, this, &Controller::onPropertyChanged);
         return property;
     }
+
+    Q_INVOKABLE QObjProperty * getProperty(const QString & path);
 };
 #endif // Controller_h__

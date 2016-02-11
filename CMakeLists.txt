@@ -8,6 +8,7 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 
 find_package(Qt5Core)
+find_package(Qt5Qml)
 
 file(GLOB_RECURSE SOURCE_FILES "${CMAKE_CURRENT_SOURCE_DIR}/include/*.h")
 file(GLOB_RECURSE HEADER_FILES "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
@@ -15,7 +16,7 @@ file(GLOB_RECURSE HEADER_FILES "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
 set(SOURCES ${HEADER_FILES} ${SOURCE_FILES})
 
 add_library(${TARGET_NAME} STATIC ${SOURCES})
-target_link_libraries(${TARGET_NAME} Qt5::Core)
+target_link_libraries(${TARGET_NAME} Qt5::Core Qt5::Qml)
 
 message(STATUS "Processing ${TARGET_NAME} - DONE")
 

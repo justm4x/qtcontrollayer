@@ -24,7 +24,7 @@ public:
     void setEnabled(bool enabled);
 
     QString displayName() const;
-    virtual QString displayValue() const = 0 {}
+    virtual QString displayValue() const;
 
 private:
     bool _enabled;
