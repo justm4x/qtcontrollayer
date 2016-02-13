@@ -13,6 +13,7 @@ class QRealProperty : public QObjProperty
     Q_PROPERTY(qreal maximum READ maximum WRITE setMaximum NOTIFY maximumChanged)
     Q_PROPERTY(QString format READ format WRITE setFormat NOTIFY formatChanged)
 public:
+    explicit QRealProperty(QObject * parent = 0);
     explicit QRealProperty(const QString & name, const QString & displayName, qreal value, qreal minimum, qreal maximum, const QString & format, QObject * parent = 0);
     virtual ~QRealProperty();
 

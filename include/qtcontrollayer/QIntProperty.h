@@ -14,6 +14,7 @@ class QIntProperty : public QObjProperty
 public:
     explicit QIntProperty(QObject * parent = 0);
     explicit QIntProperty(const QString & name, const QString & displayName, qint32 value, qint32 minimum, qint32 maximum, const QStringList & strings = QStringList(), QObject * parent = 0);
+    virtual ~QIntProperty();
 
 signals:
     void valueChanged();

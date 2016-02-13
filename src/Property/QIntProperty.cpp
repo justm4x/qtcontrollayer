@@ -1,6 +1,5 @@
 #include "../../include/qtcontrollayer/QIntProperty.h"
 
-
 QIntProperty::QIntProperty(QObject * parent /*= 0*/)
     : QObjProperty(parent)
 {
@@ -17,6 +16,11 @@ QIntProperty::QIntProperty(const QString & name, const QString & displayName, qi
     connect(this, &QIntProperty::valueChanged, this, &QObjProperty::changed);
     connect(this, &QIntProperty::valueChanged, this, &QIntProperty::displayValueChanged);
     connect(this, &QIntProperty::stringsChanged, this, &QIntProperty::displayValueChanged);
+}
+
+QIntProperty::~QIntProperty()
+{
+
 }
 
 qint32 QIntProperty::value() const
@@ -75,4 +79,3 @@ QString QIntProperty::displayValue() const
 {
     return _strings.isEmpty() ? QString::number(_value) : _strings[_value];
 }
-

@@ -8,6 +8,12 @@ namespace
     }
 }
 
+QRealProperty::QRealProperty(QObject * parent /*= 0*/)
+    : QObjProperty(parent)
+{
+
+}
+
 QRealProperty::QRealProperty(const QString & name, const QString & displayName, qreal value, qreal minimum, qreal maximum, const QString & format, QObject * parent /*= 0*/)
     : QObjProperty(name, displayName, parent)
     , _normalizedValue(normalize(value, minimum, maximum))

@@ -14,6 +14,11 @@ QObjProperty::QObjProperty(const QString & name, const QString & displayName, QO
     setObjectName(name);
 }
 
+QObjProperty::~QObjProperty()
+{
+
+}
+
 bool QObjProperty::enabled() const
 {
     return _enabled;

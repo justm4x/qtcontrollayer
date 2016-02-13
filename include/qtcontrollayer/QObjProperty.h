@@ -12,6 +12,7 @@ class QObjProperty : public QObject
 public:
     explicit QObjProperty(QObject * parent = 0);
     explicit QObjProperty(const QString & name, const QString & displayName, QObject * parent = 0);
+    virtual ~QObjProperty();
 
 signals:
     void changed();

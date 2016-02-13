@@ -1,5 +1,10 @@
 #include "../../include/qtcontrollayer/TwoStateProperty.h"
 
+TwoStateProperty::TwoStateProperty(QObject * parent /*= 0*/)
+    : QObjProperty(parent)
+{
+
+}
 
 TwoStateProperty::TwoStateProperty(const QString & name, const QString & displayName, bool state, const QStringList & strings, QObject * parent /*= 0*/)
     : QObjProperty(name, displayName, parent)

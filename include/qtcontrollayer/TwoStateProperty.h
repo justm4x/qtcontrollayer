@@ -5,6 +5,7 @@ class TwoStateProperty : public QObjProperty
     Q_OBJECT
     Q_PROPERTY(bool state READ state WRITE setState NOTIFY stateChanged);
 public:
+    explicit TwoStateProperty(QObject * parent = 0);
     explicit TwoStateProperty(const QString & name, const QString & displayName, bool state, const QStringList & strings, QObject * parent = 0);
     virtual ~TwoStateProperty();
 
