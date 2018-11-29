@@ -2,17 +2,17 @@
 #define Controller_h__
 
 #include <QObject>
+#include "QObjProperty.h"
 
-class QObjProperty;
 class Controller : public QObject
 {
     Q_OBJECT
 public:
-    explicit Controller(const QString & name, QObject * parent = 0);
+    explicit Controller(const QString & name, QObject * parent = nullptr);
     virtual ~Controller();
 
 private slots:
-    virtual void onPropertyChanged() {};
+    virtual void onPropertyChanged() {}
 
 public:
     void registerController(Controller * controller);
