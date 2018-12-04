@@ -15,4 +15,5 @@ void qtcontrollayer::registerTypes()
     qmlRegisterType<QIntProperty>("QtControlLayer", 1, 0, "QIntProperty");
     qmlRegisterType<TwoStateProperty>("QtControlLayer", 1, 0, "TwoStateProperty");
     qmlRegisterType<QRealProperty>("QtControlLayer", 1, 0, "QRealProperty");
+    qmlRegisterType<QRealProperty>("QtControlLayer", 1, 0, "QStringProperty");
 }
